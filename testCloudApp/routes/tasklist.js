@@ -1,3 +1,4 @@
+const { name } = require("ejs");
 const TaskDao = require("../models/taskDao");
 
  class TaskList {
@@ -24,6 +25,12 @@ const TaskDao = require("../models/taskDao");
        title: "My ToDo List ",
        tasks: items
      });
+   }
+
+   async searchItems(req, res){
+    const querySpec = {
+      query: "SELECT * FROM root r WHERE r.name=@name"
+    }
    }
 
    async addTask(req, res) {

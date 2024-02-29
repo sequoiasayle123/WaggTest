@@ -3,13 +3,37 @@ block content
      h1 #{title}
      br
 
+
+     form.well(action="/addtask", method="post")
+       label Search Options
+       br
+       label Item Name:
+       input(name="name", type="textbox")
+       br
+       label Post Code: 
+       input(name="postcode", type="textbox") 
+       br
+       label Item Category:
+       select(name="category")
+          option(value="mon", selected=mon) Mon
+          option(value="tues", selected=tues) Tues
+          option(value="weds", selected=weds) Weds
+          option(value="thurs", selected=thurs) Thurs
+          option(value="fri", selected=fri) Fri
+          option(value="sat", selected=sat) Sat
+          option(value="sun", selected=sun) Sun
+       br
+       button.btn(type="submit") Search
+
+     hr
+
      form(action="/completetask", method="post")
       table.table.table-striped.table-bordered
          tr
            td Name
-           td Category
-           td Date
-           td Complete
+           td Post Code
+           td Available
+           td Dunno
          if (typeof tasks === "undefined")
            tr
              td
@@ -28,12 +52,4 @@ block content
                  input(type="checkbox", name="#{task.id}", value="#{!task.completed}", checked=task.completed)
                 else
                  input(type="checkbox", name="#{task.id}", value="#{!task.completed}", checked=task.completed)
-       button.btn.btn-primary(type="submit") Update tasks
-     hr
-     form.well(action="/addtask", method="post")
-       label Item Name:
-       input(name="name", type="textbox")
-       label Item Category:
-       input(name="category", type="textbox")
-       br
-       button.btn(type="submit") Add item
+       button.btn.btn-primary(type="submit") Search
