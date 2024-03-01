@@ -40,6 +40,14 @@ const TaskDao = require("../models/taskDao");
      res.redirect("/");
    }
 
+   //Route to addUser fuction in taskDao
+   async addUser(req, res) {
+    const item = req.body;
+
+    await this.taskDao.addUser(item);
+    res.redirect("/");
+  }
+
    async completeTask(req, res) {
      const completedTasks = Object.keys(req.body);
      const tasks = [];

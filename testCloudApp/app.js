@@ -50,12 +50,14 @@ taskDao
 app.get('/', (req, res, next) => taskList.showTasks(req, res).catch(next))
 app.post('/addtask', (req, res, next) => taskList.addTask(req, res).catch(next))
 app.post('/completetask', (req, res, next) => taskList.completeTask(req, res).catch(next))
+app.post('/adduser', (req, res, next) => taskList.addUser(req, res).catch(next))
 app.set('view engine', 'jade')
 
 
  // set other pages
+ app.use(express.static(path.join(__dirname, 'public')))
  app.use('/', indexRouter)
- app.use('/users', usersRouter);
+ app.use('/users', usersRouter)
 
  // catch 404 and forward to error handler
  app.use(function(req, res, next) {

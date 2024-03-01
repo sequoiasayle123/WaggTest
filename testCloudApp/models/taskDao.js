@@ -55,6 +55,16 @@ class TaskDao {
     return doc
   }
 
+  async addUser(item) {
+    debug('Adding an user to the database')
+    if (!this.container) {
+        throw new Error('Collection is not initialized.')
+      }
+    const { resource: doc } = await this.container.items.create(item)
+    return doc
+  }
+
+
   async updateItem(itemId) {
     debug('Update an item in the database')
     if (!this.container) {
