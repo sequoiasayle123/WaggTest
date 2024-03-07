@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="../public/stylesheets/waggStyle.css">
+    <link rel="stylesheet" href="/stylesheets/waggStyle.css">
 <head>
     <meta 
         charset="UTF-8"/>
@@ -14,13 +14,11 @@
 
 <body>
     <h1>Wagg.ly Profile</h1>
-    <nav>
-        <u1>
-            <li><a href="/users">Signup</a></li>    
-            <li><a href="/owners">Find Dogs</a></li>
-            <li><a href="/walkers">Find Walkers</a></li>               
-        </u1>
-    </nav>
+    <div class="navbar">
+        <a href="/">Signup</a>
+        <a href="/getOwners">Find Dogs</a>
+        <a href="/getWalkers">Find Walkers</a>               
+    </div>
 
     <div>
         <h2>Weclome Dog Walker</h2>
@@ -28,20 +26,27 @@
 
         <form action="/getOwners" method="get" id="ownersTable">
             <table>
-                <tr>Dog Name</tr>
-                <tr>Dog Breed</tr>
-                <tr>Owner Name</tr>
-                <tr>Postcode</tr>
-                <tr>Needs Walker</tr>
-                <tr>Email</tr>
-                <td>#{task.dogName}</td>
-                <td>#{task.dogBreed}</td>
-                <td>#{task.userName}</td>
-                <td>#{task.userPostcode}</td>
-                <td>#{task.needsWalker}</td>
-                <td>#{task.email}</td>    
+                <tr>
+                    <th>Dog Name</th>
+                    <th>Dog Breed</th>
+                    <th>Owner Name</th>
+                    <th>Postcode</th>
+                    <th>Needs Walker</th>
+                    <th>Email</th>
+                </tr>
+                <% tasks.forEach(task => { %>
+                    <tr>
+                        <td><%= task.dogName %></td>
+                        <td><%= task.dogBreed %></td>
+                        <td><%= task.userName %></td>
+                        <td><%= task.postcode %></td>
+                        <td><%= task.needWalker %></td>
+                        <td><%= task.email %></td>
+                    </tr>
+                <% }); %>
             </table>
         </form>
+        
     </div>
 </body>
 

@@ -44,35 +44,17 @@ const TaskDao = require("../models/taskDao");
     const item = req.body;
 
     await this.taskDao.addUser(item);
-    res.redirect("/users");
+    res.redirect("/");
   }
 
   async addOwner(req, res) {
     const item = req.body;
 
     await this.taskDao.addUser(item);
-    res.redirect("/users");
+    res.redirect("/");
   }
 
-  async getWalkers(req, res) {
-    const querySpec = {
-      query: "SELECT * FROM root r WHERE r.available=@available",
-      parameters: [
-        {
-          name: "@available",
-          value: true
-        }
-      ]
-    };
-
-    const dogWalkers = await this.taskDao.find(querySpec);
-    res.render("walker", {
-      title: "Available Dog Walkers ",
-      tasks: dogWalkers
-    });
-  }
-
-  async getOwners(req, res) {
+  async getWalkersPage(req, res) {
     const querySpec = {
       query: "SELECT * FROM root r WHERE r.needWalker=@needWalker",
       parameters: [
@@ -84,9 +66,25 @@ const TaskDao = require("../models/taskDao");
     };
 
     const dogOwners = await this.taskDao.find(querySpec);
-    res.render("index", {
-      title: "Dogs looking for Walkers",
+    res.render("walker", {
       tasks: dogOwners
+    });
+  }
+
+  async getOwnersPage(req, res) {
+    const querySpec = {
+      query: "SELECT * FROM root r WHERE r.available=@available",
+      parameters: [
+        {
+          name: "@available",
+          value: true
+        }
+      ]
+    };
+
+    const dogWalkers = await this.taskDao.find(querySpec);
+    res.render("owner", {
+      tasks: dogWalkers
     });
   }
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="waggStyle.css">
+    <link rel="stylesheet" href="/stylesheets/waggStyle.css">
 
 <head>
     <meta 
@@ -15,13 +15,11 @@
 
 <body>
     <h1>Wagg.ly Dog Owner Hopepage</h1>
-    <nav>
-        <u1>
-            <li><a href="/users">Signup</a></li>    
-            <li><a href="/owners">Find Dogs</a></li>
-            <li><a href="/walkers">Find Walkers</a></li>    
-        </u1>
-    </nav>
+    <div class="navbar">
+        <a href="/">Signup</a> 
+        <a href="/getOwners">Find Dogs</a>
+        <a href="/getWalkers">Find Walkers</a> 
+    </div>
 
     <div>
         <h2>Weclome Dog Owner</h2>
@@ -33,6 +31,7 @@
                     <tr>
                         <th>Name</th>
                         <th>Postcode</th>
+                        <th>Rate</th>
                         <th>Available</th>
                         <th>Email</th>
                     </tr>
@@ -41,7 +40,8 @@
                     <% tasks.forEach(task => { %>
                         <tr>
                             <td><%= task.userName %></td>
-                            <td><%= task.userPostcode %></td>
+                            <td><%= task.postcode %></td>
+                            <td><%=task.rate %></td>
                             <td><%= task.available %></td>
                             <td><%= task.email %></td>
                         </tr>
