@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="/stylesheets/waggStyle.css">
+
+    <head>
+        <meta 
+            charset="UTF-8"/>
+        <title>
+            Wagg.ly
+        </title>
+        <meta 
+            name="description" 
+            content="width=device-width, initial-scale=1.0"/>
+    </head>
+    
+    <body>
+        <h1>Wagg.ly LoginPage</h1>
+        <div class="navbar">
+            <a href="/">Signup</a>  
+            <a href="/getOwners">Find Dogs</a>
+            <a href="/getWalkers">Find Walkers</a>   
+        </div>
+        <div>
+            <p>
+               Wagg.ly is the matchmaking site for dogs and walkers.
+               <br>
+               Whether your dog need to be walked, or you are able to walk a dog, you can find a parter here!
+               <br>
+               Sign up to be a registered walker or owner below! (or both ;))
+               <br>
+            </p>
+        </div>
+        <div id="signWalker">
+            <p>
+                If you are a dog walker and want to make a little bit of money.......congrats! We can find you dogs to walk here! 
+                <br>
+                Just sign up below and you will be registered in our system. 
+                This means that dag owners can find you and reach out if they would like you to walk their dog. 
+                <br>
+                We can recommend navigating to our Find Dogs page, where you can see dogs that are looking for walkers. 
+            </p>
+
+                <form action="/addWalker" method="post" class="signupForm">
+                    <div>
+                        <h3>Dog Walker Sign Up</h3>
+                        <label for="userName"><b>Name</b></label>
+                        <br>
+                        <input type="text" placeholder="Enter Name" name="userName" required>
+                        <br>
+                        <label for="email"><b>Email</b></label>
+                        <br>
+                        <input type="email" placeholder="Enter Email" name="email" required>
+                        <br>
+                        <label for="rate"><b>Rate per Hour</b></label>
+                        <br>
+                        <input type="rate" placeholder="Enter Rate" name="rate" required>
+                        <br>
+                        <label for="postcode"><b>Postcode</b></label>
+                        <br>
+                        <input type="postcode" placeholder="Enter Postcode" name="postcode" required>
+                        <br>
+                        <button type="submit">Sign Up</button>
+                    </div>
+                </form>
+        </div>
+        <div id="signOwner">
+            <p>
+                If you are a dog owner, and looking to find a walker.... you've come to the right place!. Sign up here!!!
+                <br>
+                Just sign up below and you will be registered in our system. 
+                This means that dag walkers can find you and reach out if they would like  to walk your dog. 
+                <br>
+                We can recommend navigating to our Find Walkers page, where you can see walkers that are looking for a dog. 
+            </p>
+            <form action="/addOwner" method="post" class="signupForm">
+                <div>
+                    <h3>Dog Owner Sign Up</h3>
+                    <label for="userName"><b>Name</b></label>
+                    <br>
+                    <input type="text" placeholder="Enter Name" name="userName" required>
+                    <br>
+                    <label for="email"><b>Email</b></label>
+                    <br>
+                    <input type="email" placeholder="Enter Email" name="email" required>
+                    <br>
+                    <label for="postcode"><b>Postcode</b></label>
+                    <br>
+                    <input type="postcode" placeholder="Enter Postcode" name="postcode" required>
+                    <br>
+                    <label for="dogBreed"><b>Dog Breed</b></label>
+                    <br>
+                    <input type="dogBreed" placeholder="Enter Dog Breed" name="dogBreed" required>
+                    <br>
+                    <label for="dogName"><b>Dog Name</b></label>
+                    <br>
+                    <input type="dogName" placeholder="Enter Dog Name" name="dogName" required>
+                    <br>
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>       
+       
+    </body>
+
+    <script src="/javascripts/waggScripts.js"></script>
+
+</html>

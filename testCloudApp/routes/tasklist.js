@@ -40,13 +40,54 @@ const TaskDao = require("../models/taskDao");
      res.redirect("/");
    }
 
-   //Route to addUser fuction in taskDao
-   async addUser(req, res) {
+  async addWalker(req, res) {
     const item = req.body;
 
     await this.taskDao.addUser(item);
     res.redirect("/");
   }
+
+  async addOwner(req, res) {
+    const item = req.body;
+
+    await this.taskDao.addUser(item);
+    res.redirect("/");
+  }
+
+  async getWalkersPage(req, res) {
+    const querySpec = {
+      query: "SELECT * FROM root r WHERE r.needWalker=@needWalker",
+      parameters: [
+        {
+          name: "@needWalker",
+          value: true
+        }
+      ]
+    };
+
+    const dogOwners = await this.taskDao.find(querySpec);
+    res.render("walker", {
+      tasks: dogOwners
+    });
+  }
+
+  async getOwnersPage(req, res) {
+    const querySpec = {
+      query: "SELECT * FROM root r WHERE r.available=@available",
+      parameters: [
+        {
+          name: "@available",
+          value: true
+        }
+      ]
+    };
+
+    const dogWalkers = await this.taskDao.find(querySpec);
+    res.render("owner", {
+      tasks: dogWalkers
+    });
+  }
+
 
    async completeTask(req, res) {
      const completedTasks = Object.keys(req.body);

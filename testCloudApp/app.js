@@ -10,14 +10,11 @@ const CosmosClient = require('@azure/cosmos').CosmosClient
  const cookieParser = require('cookie-parser')
  const bodyParser = require('body-parser')
 
- const indexRouter = require('./routes/index');
- const usersRouter = require('./routes/users');
-
  const app = express()
 
  // view engine setup
  app.set('views', path.join(__dirname, 'views'))
- app.set('view engine', 'jade')
+ app.set('view engine', 'ejs')
 
  // uncomment after placing your favicon in /public
  //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -50,14 +47,11 @@ taskDao
 app.get('/', (req, res, next) => taskList.showTasks(req, res).catch(next))
 app.post('/addtask', (req, res, next) => taskList.addTask(req, res).catch(next))
 app.post('/completetask', (req, res, next) => taskList.completeTask(req, res).catch(next))
-app.post('/adduser', (req, res, next) => taskList.addUser(req, res).catch(next))
-app.set('view engine', 'jade')
-
-
- // set other pages
- app.use(express.static(path.join(__dirname, 'public')))
- app.use('/', indexRouter)
- app.use('/users', usersRouter)
+app.post('/addWalker', (req, res, next) => taskList.addWalker(req, res).catch(next))
+app.post('/addOwner', (req, res, next) => taskList.addOwner(req, res).catch(next))
+app.get('/getWalkers', (req, res, next) => taskList.getWalkersPage(req, res).catch(next))
+app.get('/getOwners', (req, res, next) => taskList.getOwnersPage(req, res).catch(next))
+app.set('view engine', 'ejs')
 
  // catch 404 and forward to error handler
  app.use(function(req, res, next) {
