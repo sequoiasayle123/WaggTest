@@ -43,14 +43,14 @@ const TaskDao = require("../models/taskDao");
   async addWalker(req, res) {
     const item = req.body;
 
-    await this.taskDao.addUser(item);
+    await this.taskDao.addNewWalker(item);
     res.redirect("/");
   }
 
   async addOwner(req, res) {
     const item = req.body;
 
-    await this.taskDao.addUser(item);
+    await this.taskDao.addNewOwner(item);
     res.redirect("/");
   }
 

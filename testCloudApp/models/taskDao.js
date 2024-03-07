@@ -63,6 +63,26 @@ class TaskDao {
     const { resource: doc } = await this.container.items.create(item)
     return doc
   }
+  async addNewWalker(item) {
+    debug('Adding an user to the database')
+    if (!this.container) {
+        throw new Error('Collection is not initialized.')
+      }
+    item.usertype = "walker"
+    item.available = true
+    const { resource: doc } = await this.container.items.create(item)
+    return doc
+  }
+  async addNewOwner(item) {
+    debug('Adding an user to the database')
+    if (!this.container) {
+        throw new Error('Collection is not initialized.')
+      }
+      item.usertype = "owner"
+      item.needWalker = true
+    const { resource: doc } = await this.container.items.create(item)
+    return doc
+  }
 
 
   async updateItem(itemId) {
