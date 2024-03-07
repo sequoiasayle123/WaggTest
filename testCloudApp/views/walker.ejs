@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="../public/stylesheets/waggStyle.css">
+<head>
+    <meta 
+        charset="UTF-8"/>
+    <title>
+        Wagg.ly
+    </title>
+    <meta 
+        name="description" 
+        content="Profile for Wagg.ly"/>
+    </head>
+
+<body>
+    <h1>Wagg.ly Profile</h1>
+    <nav>
+        <u1>
+            <li><a href="/users">Signup</a></li>    
+            <li><a href="/owners">Find Dogs</a></li>
+            <li><a href="/walkers">Find Walkers</a></li>               
+        </u1>
+    </nav>
+
+    <div>
+        <h2>Weclome Dog Walker</h2>
+        <h3>Search for dogs to walk</h3>
+
+        <form action="/getOwners" method="get" id="ownersTable">
+            <table>
+                <tr>Dog Name</tr>
+                <tr>Dog Breed</tr>
+                <tr>Owner Name</tr>
+                <tr>Postcode</tr>
+                <tr>Needs Walker</tr>
+                <tr>Email</tr>
+                <td>#{task.dogName}</td>
+                <td>#{task.dogBreed}</td>
+                <td>#{task.userName}</td>
+                <td>#{task.userPostcode}</td>
+                <td>#{task.needsWalker}</td>
+                <td>#{task.email}</td>    
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

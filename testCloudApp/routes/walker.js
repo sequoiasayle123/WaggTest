@@ -4,7 +4,7 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.sendFile(path.join(__dirname, '../views/loginpage.html'));
+  res.sendFile(path.join(__dirname, '../views/walker.ejs'));
 });
 
 module.exports = router;

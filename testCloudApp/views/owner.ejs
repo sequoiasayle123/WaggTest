@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="waggStyle.css">
+
+<head>
+    <meta 
+        charset="UTF-8"/>
+    <title>
+        Wagg.ly
+    </title>
+    <meta 
+        name="description" 
+        content="HomePage for Dog Owners"/>
+    </head>
+
+<body>
+    <h1>Wagg.ly Dog Owner Hopepage</h1>
+    <nav>
+        <u1>
+            <li><a href="/users">Signup</a></li>    
+            <li><a href="/owners">Find Dogs</a></li>
+            <li><a href="/walkers">Find Walkers</a></li>    
+        </u1>
+    </nav>
+
+    <div>
+        <h2>Weclome Dog Owner</h2>
+        <h3>Search for available dog walkers</h3>
+
+        <form action="/getWalkers" method="get" id="walkerTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Postcode</th>
+                        <th>Available</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% tasks.forEach(task => { %>
+                        <tr>
+                            <td><%= task.userName %></td>
+                            <td><%= task.userPostcode %></td>
+                            <td><%= task.available %></td>
+                            <td><%= task.email %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

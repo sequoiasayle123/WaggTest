@@ -15,68 +15,69 @@
     
     <body>
         <div class="navbar">
-            <a class="active" href="#home">Home</a>
-            <a href="#search">Search</a>
-            <a href="#profile">Profile</a>
+            <li><a href="/users">Signup</a></li>    
+            <li><a href="/owners">Find Dogs</a></li>
+            <li><a href="/walkers">Find Walkers</a></li>    
           </div>
 
         <h1>Wagg.ly LoginPage</h1>
         <div class="main">
             <p>
                 If you are a dog owner, and looking to find a walker.... you've come to the right place!. Sign up here!!! 
+                If you are a dog walker and want to make a little bit of money.......congrats! We can find you dogs to walk here!
                 If i write a really really really really long sentance, i wonder where it stops on the page. 
                 Will it continue in to the contain or only stop half way across, really i need it to stop 3/4 of the was across. 
                 <br>
-                <a href="#" id="signupButton"><button>Sign up as a Dog Owner!</button></a>
-                <form action="/addUser" method="post" id="signupForm">
+                <form action="/addWalker" method="post" id="signupForm">
                     <div>
-                        <label for="usertype"><b>Dog Owner</b></label>
+                        <label for="userName"><b>Username</b></label>
                         <br>
-                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="userName" required>
                         <br>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <label for="email"><b>Email</b></label>
                         <br>
-                        <label for="psw"><b>Password</b></label>
+                        <input type="email" placeholder="Enter Email" name="email" required>
                         <br>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <label for="postcode"><b>Postcode</b></label>
+                        <br>
+                        <input type="postcode" placeholder="Enter Postcode" name="postcode" required>
                         <br>
                         <button type="submit">Sign Up</button>
                     </div>
                 </form>
-                <!-- <br><br>
-                If you are a dog walker and want to make a little bit of money.......congrats! We can find you dogs to walk here!
+
                 <br>
-                <a href="#" id="signupButton"><button>Sign up as a Dog Walker!</button></a>
-                <form method="post" id="signupForm">
+                If you are a dog owner, and looking to find a walker.... you've come to the right place!. Sign up here!!!
+                <br>
+
+                <form action="/addOwner" method="post" id="signupForm">
                     <div>
-                        <label for="usertype"><b>Dog Walker</b></label>
+                        <label for="userName"><b>Username</b></label>
                         <br>
-                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="userName" required>
                         <br>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <label for="email"><b>Email</b></label>
                         <br>
-                        <label for="psw"><b>Password</b></label>
+                        <input type="email" placeholder="Enter Email" name="email" required>
                         <br>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <label for="postcode"><b>Postcode</b></label>
+                        <br>
+                        <input type="postcode" placeholder="Enter Postcode" name="postcode" required>
+                        <br>
+                        <label for="dogBreed"><b>Dog Breed</b></label>
+                        <br>
+                        <input type="dogBreed" placeholder="Enter Dog Breed" name="dogBreed" required>
+                        <br>
+                        <label for="dogName"><b>Dog Name</b></label>
+                        <br>
+                        <input type="dogName" placeholder="Enter Dog Name" name="dogName" required>
                         <br>
                         <button type="submit">Sign Up</button>
                     </div>
-                </form> -->
+                </form>
             </p>
         </div>
-        <form method="get">
-            <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <br>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-                <br>
-                <label for="psw"><b>Password</b></label>
-                <br>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                <button type="submit">Login</button>
-            </div>
-
-        </form>
+       
     </body>
 
     <script src="../public/javascripts/waggScripts.js"></script>
