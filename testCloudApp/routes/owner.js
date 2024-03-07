@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 
-/* GET users listing. */
 const querySpec = {
     query: "SELECT * FROM root r WHERE r.available=@available",
     parameters: [
